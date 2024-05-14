@@ -1,0 +1,15 @@
+FROM node:18
+
+WORKDIR /usr/src/app
+
+COPY package*.json ./
+COPY .env ./
+RUN npm install
+
+COPY . .
+
+EXPOSE 3002
+
+RUN mkdir -p /usr/src/app/pages
+
+CMD ["npm", "run", "dev"]
