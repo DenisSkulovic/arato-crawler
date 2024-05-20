@@ -69,7 +69,7 @@ export class CrawlService {
                         await QueueService.checkURLExists(url)
                         await QueueService.addURL(url)
                     } catch (err: any) {
-                        await QueueService.setURLAsFailed(url)
+                        // await QueueService.setURLAsFailed(url)
                         console.error(err.message)
                     }
                     resolve(null)
